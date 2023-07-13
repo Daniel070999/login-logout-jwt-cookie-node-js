@@ -12,8 +12,7 @@
     "js",
     "node",
     "jwt",
-    "roles",
-    "cookie"
+    "roles"
   ],
   "author": "Daniel Patiño",
   "license": "ISC",
