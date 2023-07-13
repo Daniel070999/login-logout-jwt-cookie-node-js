@@ -26,13 +26,12 @@ function logOut(req, res) {
 };
 
 function verifyLoggin(req, res, next) {
-    console.log(req.auth);
     const authorization = req.headers.authorization.split(' ')[1]
     const cookie = req.cookies.access_token;
     if (cookie != null && authorization == cookie) {
         next();
     } else {
-        res.status(200).json({ message: "No esta en sesion" });
+        res.status(400).json({ message: "No esta en sesion" });
     }
 }
 
