@@ -12,7 +12,7 @@ const users = [
 async function logIn(res, { username, password }) {
     const user = users.find(u => u.username === username && u.password === password);
     if (user) {
-        const token = jwt.sign({ sub: user.id, role: user.role }, config.secret/*, { expiresIn: '1h' }*/);
+        const token = jwt.sign({ sub: user.id, role: user.role, name: user.firstName }, config.secret/*, { expiresIn: '1h' }*/);
         console.log(token);
         return res.cookie("access_token", token, { httpOnly: true }), user;
     }
