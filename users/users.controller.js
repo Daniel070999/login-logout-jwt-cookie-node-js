@@ -31,7 +31,7 @@ function verifyLoggin(req, res, next) {
     if (cookie != null && authorization == cookie) {
         next();
     } else {
-        res.status(400).json({ message: "No esta en sesion" });
+        res.status(200).json({ message: "No esta en sesion" });
     }
 }
 
